@@ -1,0 +1,4 @@
+#!/bin/sh
+echo "Running.. " >> /tmp/run.txt
+#/Users/janhouse/.nvm/versions/node/v0.12.2/bin/node node-dlna-test.js
+/Applications/VLC.app/Contents/MacOS/VLC http://127.0.0.1:8888

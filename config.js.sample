@@ -1,0 +1,10 @@
+module.exports = {
+  config: {
+	  tmpFolder:"/tmp/tv-stream/",
+	  downloadPath:"/tmp/torrent-data/",
+	  listenPort:54321,
+	  listenIp:"0.0.0.0",
+	  pushScript:"./start-tv.sh",
+	  saveScript:"./save-files.sh"
+  }
+};

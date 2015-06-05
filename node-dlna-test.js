@@ -40,6 +40,8 @@ function runVideoStream(url, streamIp){
 	  }
 	};
 
+	console.log('http://'+streamIp+':8888/');
+
 	client.load('http://'+streamIp+':8888/', options, function(err, result) {
 	  if(err) throw err;
 	  console.log('playing ...');
@@ -54,11 +56,15 @@ function getLocalIP(renderer){
 	var os = require('os');
 	var ifaces = os.networkInterfaces();
 
+
+var setIp=0;
 	Object.keys(ifaces).forEach(function (ifname) {
 	  var alias = 0
 	    ;
-
+		
 	  ifaces[ifname].forEach(function (iface) {
+		  if(setIp==1)
+			  return;
 	    if ('IPv4' !== iface.family || iface.internal !== false) {
 	      // skip over internal (i.e. 127.0.0.1) and non-ipv4 addresses
 	      return;
@@ -73,6 +79,8 @@ function getLocalIP(renderer){
 	    }
 
 		localAddress=iface.address;
+		setIp=1;
+		
 	  });
 	});
 }
